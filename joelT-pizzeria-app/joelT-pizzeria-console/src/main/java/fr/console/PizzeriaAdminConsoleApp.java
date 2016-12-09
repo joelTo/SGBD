@@ -2,6 +2,7 @@ package fr.console;
 
 import java.sql.SQLException;
 
+import fr.dao.PizzaDaoBaseDeDonneeJDBC;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
@@ -50,13 +51,13 @@ public class PizzeriaAdminConsoleApp {
 		// PizzaDaoFichier test = new PizzaDaoFichier();
 		// System.out.println(test.findAll());
 
-		// PizzaDaoBaseDeDonneeJDBC test = new PizzaDaoBaseDeDonneeJDBC();
+		PizzaDaoBaseDeDonneeJDBC test = new PizzaDaoBaseDeDonneeJDBC();
 		// System.out.println(test.findAll());
 		// test.save(new Pizza("PEP", "Pépéroni", CategoriePizza.VIANDE,
 		// 12.50));
 		// test.update(new Pizza("IND3", "indienne3", CategoriePizza.POISSON,
 		// 14.30), "IND2");
-		// test.insertionPizza3();
+		test.insertionPizza3();
 		/*
 		 * while (Arret == false) { Core.displayMenu(); try {
 		 * Core.parseAndExec(); } catch (NumberFormatException e) {
