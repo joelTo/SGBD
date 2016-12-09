@@ -46,7 +46,7 @@ public class PizzaDaoBaseJPA implements PizzaDaoFactory {
 	}
 
 	@Override
-	public void delete(String pizzaToDelete) throws DeletePizzaException, SQLException {
+	public void delete(String pizzaToDelete) throws DeletePizzaException {
 		Pizza emp = findByCode(pizzaToDelete);
 		System.out.println("La " + emp + "va être modifié");
 

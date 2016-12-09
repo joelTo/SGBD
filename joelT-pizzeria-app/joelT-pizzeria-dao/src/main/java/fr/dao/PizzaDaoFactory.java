@@ -14,7 +14,7 @@ public interface PizzaDaoFactory {
 
 	void save(Pizza newPizza) throws SavePizzaException, SQLException;
 
-	void delete(String pizzaToDelete) throws DeletePizzaException, SQLException;
+	void delete(String pizzaToDelete) throws DeletePizzaException;
 
 	void update(Pizza pizzaUdate, String oldCode) throws UpdatesPizzaException, SQLException;
 

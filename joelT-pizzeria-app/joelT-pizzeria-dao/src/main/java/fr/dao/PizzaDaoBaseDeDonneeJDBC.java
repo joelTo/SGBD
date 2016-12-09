@@ -96,13 +96,18 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 	}
 
 	@Override
-	public void delete(String pizzaToDelete) throws DeletePizzaException, SQLException {
-		Connection connection = DriverManager.getConnection(url, user, password);
-		Statement statement = connection.createStatement();
-		System.out.println();
-		int nbPizzaInsere = statement.executeUpdate("DELETE FROM pizzas WHERE reference = '" + pizzaToDelete + "';");
-		System.out.println(nbPizzaInsere + " pizza supprimé");
-		statement.close();
+	public void delete(String pizzaToDelete) throws DeletePizzaException {
+		try (Connection connection = DriverManager.getConnection(url, user, password);
+				Statement statement = connection.createStatement()) {
+			System.out.println();
+			int nbPizzaInsere = statement
+					.executeUpdate("DELETE FROM pizzas WHERE reference = '" + pizzaToDelete + "';");
+			System.out.println(nbPizzaInsere + " pizza supprimé");
+
+		} catch (SQLException e) {
+			throw new DeletePizzaException(e);
+		}
+
 	}
 
 	@Override
