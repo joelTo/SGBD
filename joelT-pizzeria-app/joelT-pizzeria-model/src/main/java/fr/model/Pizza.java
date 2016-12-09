@@ -1,13 +1,29 @@
 package fr.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
-public class Pizza {
+@Entity
+@NamedQuery(name = "code.findByCode", query = "SELECT p FROM Pizza p WHERE p.code=:name")
 
+@Table(name = "pizza")
+public class Pizza {
+	@Id
 	private int id;
+	@Column(name = "reference", length = 30, nullable = false, unique = true)
 	private String code;
+	@Column(name = "libelle", length = 30, nullable = false)
 	private String nom;
+	@Column(name = "prix", length = 30, nullable = false)
 	private Double prix;
+	@Enumerated(EnumType.STRING)
 	private CategoriePizza catPizza;
 
 	public CategoriePizza getCatPizza() {

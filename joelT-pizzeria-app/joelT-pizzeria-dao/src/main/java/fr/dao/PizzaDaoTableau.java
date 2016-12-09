@@ -1,6 +1,7 @@
 package fr.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
@@ -24,7 +25,7 @@ public class PizzaDaoTableau implements PizzaDaoFactory {
 	};
 
 	@Override
-	public ArrayList<Pizza> findAll() {
+	public List<Pizza> findAll() {
 		return pizzas;
 	}
 

@@ -4,18 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
-
-import org.apache.commons.collections4.ListUtils;
 
 import fr.exception.DeletePizzaException;
 import fr.exception.PizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
-import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
@@ -64,7 +60,7 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 	}
 
 	@Override
-	public ArrayList<Pizza> findAll() throws SQLException {
+	public List<Pizza> findAll() throws SQLException {
 		// Connection connection =
 		// Statement statement = connection.createStatement();
 		// connection.setAutoCommit(false);
@@ -120,50 +116,45 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 		System.out.println(nbPizzaInsere + " pizza mise a jour");
 		statement.close();
 	}
-
-	public void insertionPizza3() throws SQLException {
-		List<Pizza> pizza = new ArrayList<Pizza>();
-		pizza.add(new Pizza(0, "PEP", "Pépéroni", CategoriePizza.VIANDE, 12.50));
-		pizza.add(new Pizza(1, "MAR", "Margherita", CategoriePizza.VIANDE, 14.00));
-		pizza.add(new Pizza(2, "REI", "La Reine", CategoriePizza.VIANDE, 11.50));
-		pizza.add(new Pizza(3, "FRO", "La 4 fromages", CategoriePizza.SANS_VIANDE, 12.00));
-		pizza.add(new Pizza(4, "CAN", "La cannibale", CategoriePizza.VIANDE, 12.50));
-		pizza.add(new Pizza(5, "SAV", "La savoyarde", CategoriePizza.VIANDE, 13.00));
-
-		Connection connection = DriverManager.getConnection(url, user, password);
-		Statement statement = connection.createStatement();
-		connection.setAutoCommit(false);
-
-		List<List<Pizza>> partition = ListUtils.partition(pizza, 3);
-		partition.stream().forEach(t -> {
-			for (List<Pizza> list : partition) {
-
-				System.out.println(list.size());
-				list.stream().forEach(System.out::println);
-				System.out.println("*******************");
-				try {
-					connection.commit();
-					list.stream().forEach(newPizza -> {
-						int nbPizzaInsere = 0;
-						try {
-							nbPizzaInsere = statement.executeUpdate(
-									"INSERT INTO pizzas(id,libelle,reference,prix,url_image,categorie) VALUES("
-											+ newPizza.getId() + ",'" + newPizza.getNom() + "','" + newPizza.getCode()
-											+ "'," + newPizza.getPrix() + ",'/','" + newPizza.getCatPizza() + "')");
-						} catch (SQLException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-
-						System.out.println(nbPizzaInsere + " pizza inséré");
-					});
-				} catch (SQLException e) {
-					Logger.getLogger(PizzaDaoBaseDeDonneeJDBC.class.getName()).severe(e.getMessage());
-					e.printStackTrace();
-				}
-
-			}
-		});
-
-	}
+	//
+	// public void insertionPizza3() throws SQLException {
+	// List<Pizza> pizza = new ArrayList<Pizza>();
+	// pizza.add(new Pizza(0, "PEP", "Pépéroni", CategoriePizza.VIANDE, 12.50));
+	// pizza.add(new Pizza(1, "MAR", "Margherita", CategoriePizza.VIANDE,
+	// 14.00));
+	// pizza.add(new Pizza(2, "REI", "La Reine", CategoriePizza.VIANDE, 11.50));
+	// pizza.add(new Pizza(3, "FRO", "La 4 fromages",
+	// CategoriePizza.SANS_VIANDE, 12.00));
+	// pizza.add(new Pizza(4, "CAN", "La cannibale", CategoriePizza.VIANDE,
+	// 12.50));
+	// pizza.add(new Pizza(5, "SAV", "La savoyarde", CategoriePizza.VIANDE,
+	// 13.00));
+	//
+	// Connection connection = DriverManager.getConnection(url, user, password);
+	// Statement statement = connection.createStatement();
+	// connection.setAutoCommit(false);
+	//
+	// List<List<Pizza>> partition = ListUtils.partition(pizza, 3);
+	// System.out.println(partition.size());
+	// partition.stream().forEach(listPizza -> {
+	// for (Pizza piz : listPizza) {
+	// Connection conn;
+	// PreparedStatement addPizzaSt = conn
+	// .prepareStatement("INSERT INTO
+	// pizzas(id,libelle,reference,prix,categorie) VALUES (?,?,?,?)");
+	// addPizzaSt.setInt(1, piz.getId());
+	// addPizzaSt.setString(2, piz.getNom());
+	// addPizzaSt.setString(3, piz.getCode());
+	// addPizzaSt.setDouble(4, piz.getPrix());
+	// addPizzaSt.setString(5, piz.getCatPizza().name());
+	// }
+	// connection.commit();
+	//
+	// });
+	// catch (SQLException e) {
+	// connection.rollback();
+	// Logger.getLogger(PizzaDaoBaseDeDonneeJDBC.class.getName()).severe(e.getMessage());
+	// throw new PizzaException(e);
+	// }
+	// }
 }

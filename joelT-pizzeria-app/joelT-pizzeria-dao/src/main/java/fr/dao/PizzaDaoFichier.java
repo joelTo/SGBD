@@ -18,7 +18,7 @@ public class PizzaDaoFichier implements PizzaDaoFactory {
 	private File file = new File("PizzaFiles");
 
 	@Override
-	public ArrayList<Pizza> findAll() {
+	public List<Pizza> findAll() {
 		List<String> codeList = listCodesPizza();
 		codeList.stream().forEach(codeFile -> readFile(codeFile));
 		return null;

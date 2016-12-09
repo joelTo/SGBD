@@ -23,6 +23,8 @@
 		<commons-collections4.version>4.1</commons-collections4.version> <!-- dependance decoupage de list en list fixe -->
 		<log4j.version>1.2.17</log4j.version> <!-- dependance logger -->
 		<junit.version>4.12</junit.version><!-- dependance de test -->
+		<jpa-persistence.version>1.0.0.Final</jpa-persistence.version><!-- dependance de la base de donnee JPA -->
+		<hibernate-entitymanager>5.1.0.Final</hibernate-entitymanager><!-- dependance de la base de donnee JPA hibernate -->
 	</properties>
 
 
@@ -76,6 +78,19 @@
 				<version>${projet.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>${jpa-persistence.version}</version>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate-entitymanger.version}</version>
+				<scope>compile</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
