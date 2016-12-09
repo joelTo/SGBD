@@ -10,18 +10,52 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import org.apache.commons.collections4.ListUtils;
+import org.apache.log4j.Logger;
 
 import fr.exception.DeletePizzaException;
+import fr.exception.PizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
-	private ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
 	private String url;
 	private String user;
 	private String password;
+
+	interface IRunSql<T> {
+		T exec(Statement st) throws SQLException;
+	}
+
+	interface IRunSqlPrep<T> {
+		T exec(Connection conn) throws SQLException;
+	}
+
+	public <T> T execute(IRunSql<T> run) {
+		try (Connection connection = DriverManager.getConnection(url, user, password);
+				Statement statement = connection.createStatement();) {
+			
+			return run.exec(statement);
+			
+		} catch (SQLException e) {
+		Logger.getLogger(PizzaDaoBaseDeDonneeJDBC.class.getName())).severe(e.getMessage());
+			throw new PizzaException(e);
+		}
+	}
+
+	public <T> T executePrep(IRunSqlPrep<T> run) {
+		try (Connection connection = DriverManager.getConnection(url, user, password);
+				Statement statement = connection.createStatement();) {
+			
+			return run.exec(connection);
+		}
+		catch (SQLException e){
+			Logger.getLogger(PizzaDaoBaseDeDonneeJDBC.class.getName()).severe(e.getMessage()));
+			throw new PizzaException(e);
+		}
+			
+	}
 
 	public PizzaDaoBaseDeDonneeJDBC() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -33,7 +67,7 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 
 	@Override
 	public ArrayList<Pizza> findAll() throws SQLException {
-		Connection connection = DriverManager.getConnection(url, user, password);
+		Connection connection = 
 		Statement statement = connection.createStatement();
 		connection.setAutoCommit(false);
 		ResultSet resultats = statement.executeQuery("SELECT * FROM pizzas");
