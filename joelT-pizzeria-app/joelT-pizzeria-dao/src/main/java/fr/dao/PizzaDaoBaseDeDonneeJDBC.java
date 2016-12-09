@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import org.apache.commons.collections4.ListUtils;
 
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
@@ -32,6 +35,7 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 	public ArrayList<Pizza> findAll() throws SQLException {
 		Connection connection = DriverManager.getConnection(url, user, password);
 		Statement statement = connection.createStatement();
+		connection.setAutoCommit(false);
 		ResultSet resultats = statement.executeQuery("SELECT * FROM pizzas");
 		while (resultats.next()) {
 			Integer id = resultats.getInt("id");
@@ -83,4 +87,27 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 		statement.close();
 	}
 
+	public void insertionPizza3() throws SQLException {
+		List<Pizza> pizza = new ArrayList<Pizza>();
+		pizza.add(new Pizza(0, "PEP", "Pépéroni", CategoriePizza.VIANDE, 12.50));
+		pizza.add(new Pizza(1, "MAR", "Margherita", CategoriePizza.VIANDE, 14.00));
+		pizza.add(new Pizza(2, "REI", "La Reine", CategoriePizza.VIANDE, 11.50));
+		pizza.add(new Pizza(3, "FRO", "La 4 fromages", CategoriePizza.SANS_VIANDE, 12.00));
+		pizza.add(new Pizza(4, "CAN", "La cannibale", CategoriePizza.VIANDE, 12.50));
+		pizza.add(new Pizza(5, "SAV", "La savoyarde", CategoriePizza.VIANDE, 13.00));
+
+		Connection connection = DriverManager.getConnection(url, user, password);
+		Statement statement = connection.createStatement();
+		connection.setAutoCommit(false);
+
+		List<List<Pizza>> partition = ListUtils.partition(pizza, 3);
+		partition.stream().forEach(t -> {
+			for (List<Pizza> list : partition) {
+
+				// System.out.println(list.size());
+				list.stream().forEach(System.out::println);
+			}
+		});
+
+	}
 }
