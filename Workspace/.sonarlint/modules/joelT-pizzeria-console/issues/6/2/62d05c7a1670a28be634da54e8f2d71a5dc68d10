@@ -1,0 +1,22 @@
+
+„"squid:ClassVariableVisibilityCheck"QMake Arret a static final constant or non-public and provide accessors if needed.(½ç‰Åûÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ýÏƒ—ÿÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ü‡èú
+Isquid:S1135H"2Complete the task associated to this TODO comment.(¨Ç‹ 
+Isquid:S1135K"2Complete the task associated to this TODO comment.(Âˆ© 
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(¤“ÎÒüÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Øê¡è
+bsquid:CommentedOutCodeLine;"<This block of commented-out lines of code should be removed.(ú…¨
+bsquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(ýî·
+bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(ï©£
+lsquid:S3008"PRename this field "Arret" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ç‰Åûÿÿÿÿ
+gsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ŠÝ¼úÿÿÿÿ
+Gsquid:S1444"+Make this "public static Arret" field final(½ç‰Åûÿÿÿÿ
+gsquid:CommentedOutCodeLine5"<This block of commented-out lines of code should be removed.(Øû‘Ÿþÿÿÿÿ
+bsquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(•íœé
+X
+squid:S1069";Replace this usage of System.out or System.err by a logger.(žÍâû8É“þœ+
+bsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(´È©À
+Isquid:S1135J"2Complete the task associated to this TODO comment.(›š•É
+bsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(ã³±—
+asquid:CommentedOutCodeLine1"<This block of commented-out lines of code should be removed.(«Ÿ²R

@@ -1,0 +1,10 @@
+
+Osquid:UselessParenthesesCheckM"!Remove those useless parentheses.(Øòàûÿÿÿÿ
+V
+squid:S1066";Replace this usage of System.out or System.err by a logger.(û±ù·ûÿÿÿÿ
+Esquid:S36551".Call "isPresent()" before accessing the value.(«Å‚Õ
+Esquid:S3655@".Call "isPresent()" before accessing the value.(ùÙµË
+usquid:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+Psquid:S3599"9Replace this syntax with a different type initialization.(«õ’²
+Vsquid:S1161-":Add the "@Override" annotation above this method signature(ŸÚ‘øÿÿÿÿ
+Qsquid:S1161:":Add the "@Override" annotation above this method signature(¦Ìî‹

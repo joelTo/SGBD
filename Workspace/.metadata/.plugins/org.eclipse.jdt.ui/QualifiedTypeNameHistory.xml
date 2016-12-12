@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="fr.ihm.action.Action"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="fr.ihm.MainMenuClient"/>
+<fullyQualifiedTypeName name="fr.ihm.IhmUtilClient"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="fr.model.NomComplet"/>
+<fullyQualifiedTypeName name="fr.model.Client"/>
+<fullyQualifiedTypeName name="org.apache.commons.codec.digest.DigestUtils"/>
+<fullyQualifiedTypeName name="fr.dao.ClientDaoFactory"/>
+<fullyQualifiedTypeName name="fr.dao.ClientDaoConsoleJPA"/>
+</qualifiedTypeNameHistroy>
