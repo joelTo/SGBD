@@ -1,0 +1,26 @@
+package fr.ihm.action;
+
+import fr.ihm.IhmUtilClient;
+
+public class InscriptionClient extends ActionClient{
+	private IhmUtilClient ihmUtilCleint;
+
+	public  InscriptionClient(IhmUtilClient ihm) {
+		super();
+		this.setDescription("S'inscrire");
+		this.ihmUtilCleint=ihm;
+	}
+	@Override
+	public void doAction() {
+	
+
+	}
+
+	@Override
+	public void describeAction() {
+
+
+	}
+
+
+}

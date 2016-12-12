@@ -1,0 +1,20 @@
+package fr.ihm.action;
+
+import fr.ihm.IhmUtilClient;
+
+public class InscriptionClient extends ActionClient{
+private IhmUtilClient ihmUtilCleint;
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void describeAction() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

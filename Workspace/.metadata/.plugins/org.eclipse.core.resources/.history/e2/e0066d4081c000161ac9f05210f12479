@@ -1,0 +1,9 @@
+package fr.console;
+
+public class PizzeriaClientConsoleApp {
+
+	public static void main(String[] args) {
+	
+	}
+
+}

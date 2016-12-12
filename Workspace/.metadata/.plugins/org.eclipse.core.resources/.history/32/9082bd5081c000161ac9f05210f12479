@@ -1,0 +1,17 @@
+package fr.console;
+
+import fr.dao.ClientDaoConsoleJPA;
+import fr.dao.ClientDaoFactory;
+import fr.dao.PizzaDaoBaseJPA;
+import fr.model.CategoriePizza;
+import fr.model.Pizza;
+
+public class PizzeriaClientConsoleApp {
+
+	public static void main(String[] args) {
+		ClientDaoFactory test = new ClientDaoConsoleJPA();
+		System.out.println(test.findAll());
+		test.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE, 13.50));
+	}
+
+}

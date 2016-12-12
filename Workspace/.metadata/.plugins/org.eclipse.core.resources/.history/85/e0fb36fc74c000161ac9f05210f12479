@@ -1,0 +1,7 @@
+package fr.ihm;
+
+public class MainMenuClient {
+	private Map<Integer, Action> map = new TreeMap<Integer, Action>();
+	private IhmUtil ihmUtil;
+	
+}

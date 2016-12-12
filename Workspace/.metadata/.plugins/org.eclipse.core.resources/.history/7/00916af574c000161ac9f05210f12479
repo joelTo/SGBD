@@ -1,0 +1,24 @@
+package fr.ihm;
+
+import java.util.Scanner;
+
+import fr.dao.PizzaDaoFactory;
+
+public class IhmUtil {
+
+	private Scanner scanner;
+	
+	public IhmUtil(Scanner scanner) {
+		super();
+		this.scanner = scanner;
+	}
+
+	public Scanner getScanner() {
+		return this.scanner;
+	}
+
+	public PizzaDaoFactory getPizzaDao() {
+		return this.pizzaDao;
+	}
+
+}

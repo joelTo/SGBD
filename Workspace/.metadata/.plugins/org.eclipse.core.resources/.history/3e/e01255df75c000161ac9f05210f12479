@@ -1,0 +1,12 @@
+package fr.ihm;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+import fr.ihm.action.Action;
+
+public class MainMenuClient {
+	private Map<Integer, Action> map = new TreeMap<Integer, Action>();
+	private IhmUtil ihmUtil;
+	
+}

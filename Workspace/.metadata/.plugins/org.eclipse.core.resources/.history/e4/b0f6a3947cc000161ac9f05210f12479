@@ -1,0 +1,25 @@
+package fr.ihm;
+
+import java.util.Scanner;
+
+import fr.dao.ClientDaoFactory;
+import fr.dao.PizzaDaoFactory;
+
+public class IhmUtilClient {
+
+	private Scanner scanner;
+	private  ClientDaoFactory clientdoa;
+	
+	public IhmUtilClient(Scanner scanner, ClientDaoFactory cleintdao) {
+		super();
+		this.scanner = scanner;
+		this.clientdoa=
+	}
+
+	public Scanner getScanner() {
+		return this.scanner;
+	}
+
+	
+
+}

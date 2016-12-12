@@ -1,0 +1,46 @@
+package fr.dao;
+
+import java.util.List;
+
+import fr.model.Client;
+import fr.model.Pizza;
+
+public class ClientDaoConsole implements ClientDaoFactory {
+
+	@Override
+	public List<Pizza> findCommand() {
+		
+		return null;
+	}
+
+	@Override
+	public void save(String newPizza, Integer nbPizza) {
+	
+		
+	}
+
+	@Override
+	public void delete(String pizzaToDelete, Integer nbPizza) {
+		
+		
+	}
+
+	@Override
+	public void update(String pizzaUdate, Integer nbPizza) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void signIn(Client pers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void connection(String email, String password) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

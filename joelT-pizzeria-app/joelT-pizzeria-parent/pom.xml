@@ -13,6 +13,7 @@
 		<module>../joelT-pizzeria-console</module>
 		<module>../joelT-pizzeria-dao</module>
 		<module>../joelT-pizzeria-model</module>
+		<module>../joelT-pizzeria-console-client</module>
 	</modules>
 
 	<properties>
@@ -24,7 +25,7 @@
 		<log4j.version>1.2.17</log4j.version> <!-- dependance logger -->
 		<junit.version>4.12</junit.version><!-- dependance de test -->
 		<jpa-persistence.version>1.0.0.Final</jpa-persistence.version><!-- dependance de la base de donnee JPA -->
-		<hibernate-entitymanager>5.1.0.Final</hibernate-entitymanager><!-- dependance de la base de donnee JPA hibernate -->
+		<hibernate-entitymanager.version>5.1.0.Final</hibernate-entitymanager.version><!-- dependance de la base de donnee JPA hibernate -->
 	</properties>
 
 
@@ -88,7 +89,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
-				<version>${hibernate-entitymanger.version}</version>
+				<version>${hibernate-entitymanager.version}</version>
 				<scope>compile</scope>
 			</dependency>
 		</dependencies>

@@ -1,0 +1,11 @@
+package fr.ihm.action;
+
+public abstract class Action {
+	
+private String description;
+
+public String getDescription(){
+	
+}
+
+}

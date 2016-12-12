@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<groupId>dta-pizzeria</groupId>
+	<artifactId>joelT-pizzeria-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+
+	<modules>
+		<module>../joelT-pizzeria-console</module>
+		<module>../joelT-pizzeria-dao</module>
+		<module>../joelT-pizzeria-model</module>
+		<module>../joelT-pizzeria-console-client</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<source.version>1.8</source.version><!-- dependance version JVM de developpement -->
+		<target.version>1.8</target.version> <!-- dependance version JVM de déploiment -->
+		<mysql.version>5.1.40</mysql.version><!-- dependance SGBD MYSQL -->
+		<commons-collections4.version>4.1</commons-collections4.version> <!-- dependance decoupage de list en list fixe -->
+		<log4j.version>1.2.17</log4j.version> <!-- dependance logger -->
+		<junit.version>4.12</junit.version><!-- dependance de test -->
+		<jpa-persistence.version>1.0.0.Final</jpa-persistence.version><!-- dependance de la base de donnee JPA -->
+		<hibernate-entitymanager.version>5.1.0.Final</hibernate-entitymanager.version><!-- dependance de la base de donnee JPA hibernate -->
+	</properties>
+
+
+	<build>
+		<finalName>pizzeria-applications</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${source.version}</source>
+						<target>${target.version}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${commons-collections4.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>dta-pizzeria</groupId>
+				<artifactId>joelT-pizzeria-dao</artifactId>
+				<version>${projet.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>dta-pizzeria</groupId>
+				<artifactId>joelT-pizzeria-model</artifactId>
+				<version>${projet.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>${jpa-persistence.version}</version>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate-entitymanger.version}</version>
+				<scope>compile</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+
+	<profiles>
+
+		<profile>
+			<id>DoaTableau</id>
+			<properties>
+				<dao.impl>fr.dao.PizzaDaoFactory.PizzaDaoTableau </dao.impl>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>DoaFichier</id>
+			<properties>
+				<dao.impl>fr.dao.PizzaDaoFactory.PizzaDaoFichier </dao.impl>
+			</properties>
+		</profile>
+
+	</profiles>
+	<dependencies>
+
+
+	</dependencies>
+</project>
