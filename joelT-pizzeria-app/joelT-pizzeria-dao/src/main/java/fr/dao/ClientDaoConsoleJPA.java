@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.TypedQuery;
 
 import fr.model.Client;
 import fr.model.Pizza;
@@ -53,7 +54,13 @@ public class ClientDaoConsoleJPA implements ClientDaoFactory {
 
 	@Override
 	public void connection(String email, String password) {
+		// Faire une requete preparer avec email et le mot de passe WHERE
 
 	}
 
+	public List<Pizza> findAllPizza() {
+		em = emf.createEntityManager();
+		TypedQuery<Pizza> empizza = em.createQuery("SELECT p FROM Pizza p", Pizza.class);
+		return empizza.getResultList();
+	}
 }
