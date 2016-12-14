@@ -1,7 +1,0 @@
-
-Jsquid:S1068"'Remove this unused "emf" private field.(€‘âûÿÿÿÿ8ŒíÑœ+
-˜squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÎÙëÂ
-˜squid:S11867"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(èŒûÂ
-Bsquid:S1168"+Return an empty collection instead of null.(¥¹ï
-squid:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(øÜôüøÿÿÿÿ
-˜squid:S1186)"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²¯ïŞ

@@ -1,5 +1,0 @@
-package fr.dao;
-
-public interface ClientDaoFactory {
-
-}

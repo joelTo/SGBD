@@ -1,3 +1,0 @@
-
-ôsquid:S1160"ÅRefactor this method to throw at most one checked exception instead of: fr.exception.UpdatesPizzaException, java.sql.SQLException(äºÔÄ
-ïsquid:S1160"~Refactor this method to throw at most one checked exception instead of: fr.exception.SavePizzaException, java.sql.SQLException(ÄÆ î
