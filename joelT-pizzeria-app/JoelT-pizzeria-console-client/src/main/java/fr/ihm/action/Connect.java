@@ -1,5 +1,7 @@
 package fr.ihm.action;
 
+import java.util.logging.Logger;
+
 import org.apache.commons.codec.digest.DigestUtils;
 
 import fr.ihm.IhmUtilClient;
@@ -26,7 +28,8 @@ public class Connect extends ActionClient {
 
 	@Override
 	public void describeAction() {
-
+		Logger.getLogger(this.getDescription());
+		System.out.println(this.getDescription());
 	}
 
 }

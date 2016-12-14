@@ -30,12 +30,19 @@ public class ClientDaoConsoleJPA implements ClientDaoFactory {
 
 	@Override
 	public void save(String newPizza, Integer nbPizza) {
-
+		// Requete 1: Récuperer toutes les informations sur la pizza
+		// Requete 2: rajouter son id + la quantité dans le commande
+		/*
+		 * vérifier que la table commande est bienle numero de client + la table
+		 * de pizza associé au numero de commande
+		 */
 	}
 
 	@Override
-	public void delete(String pizzaToDelete, Integer nbPizza) {
-
+	public void delete(String Commande, Integer nbPizza) {
+		// Requete 1 : Trouver la commande
+		// regarder son statut
+		// retourne possible ...
 	}
 
 	@Override
